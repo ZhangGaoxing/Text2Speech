@@ -1,0 +1,50 @@
+﻿<Page
+    x:Class="Text2Speech.Views.AboutPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Text2Speech.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ScrollViewer Name="AboutScrollViewer" Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" MinWidth="400">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.35*" />
+                <RowDefinition Height="0.6*" />
+            </Grid.RowDefinitions>
+
+            <Grid Opacity="0.9" Background="{ThemeResource SystemControlBackgroundAccentBrush}">
+                <StackPanel VerticalAlignment="Center">
+                    <Ellipse Height="120" Width="120" StrokeThickness="4" Stroke="White" Margin="0,15,0,0">
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="/Assets/Logo.png" />
+                        </Ellipse.Fill>
+                    </Ellipse>
+
+                    <TextBlock x:Uid="AppNameText" Text="语音合成器" Foreground="White" FontSize="30" Margin="0,10,0,0" HorizontalAlignment="Center" />
+                    <TextBlock Name="Version" HorizontalAlignment="Center" Margin="0,5,0,0" />
+                    <TextBlock Name="Publisher" HorizontalAlignment="Center" Margin="0,5,0,15" />
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <StackPanel>
+                    <TextBlock x:Uid="Feedback" Text="发送反馈" FontSize="22" Margin="20,20,0,0" />
+                    <StackPanel Orientation="Horizontal" Margin="20,5,0,0">
+                        <TextBlock x:Uid="EMail" VerticalAlignment="Center">发送邮件至：</TextBlock>
+                        <HyperlinkButton NavigateUri="mailto:zhangyuexin121@live.cn" Content="zhangyuexin121@live.cn" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="20,5,0,0">
+                        <TextBlock x:Uid="Sina" VerticalAlignment="Center">新浪微博私信：</TextBlock>
+                        <HyperlinkButton NavigateUri="http://www.weibo.com/279639933">
+                            <Image Source="/Assets/weibo.png" Height="35" />
+                        </HyperlinkButton>
+                    </StackPanel>
+
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </ScrollViewer>
+</Page>

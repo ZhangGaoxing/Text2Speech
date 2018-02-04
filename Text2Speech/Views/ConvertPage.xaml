@@ -1,0 +1,136 @@
+﻿<Page
+    x:Class="Text2Speech.Views.ConvertPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Text2Speech.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ScrollViewer>
+        <Grid Margin="10" SizeChanged="Grid_SizeChanged">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <ProgressRing Name="ConvertProgress"
+                          Grid.ColumnSpan="2" Grid.RowSpan="2"
+                          VerticalAlignment="Center" HorizontalAlignment="Center"
+                          IsActive="False"
+                          Height="80" Width="80" Foreground="{ThemeResource SystemControlBackgroundAccentBrush}" />
+
+            <TextBox Name="ConvertText" Header="转换文本：" Margin="5"
+                     Grid.Column="0" Grid.RowSpan="2"
+                     TextWrapping="Wrap" AcceptsReturn="True"
+                     HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+
+            <StackPanel Name="ConvertFuncPanel" Margin="5"
+                        Grid.Column="1" Grid.RowSpan="2"
+                        HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+
+                <ComboBox Name="ConvertVoice" Header="语音："
+                          HorizontalAlignment="Stretch"
+                          SelectionChanged="ConvertVoice_SelectionChanged"/>
+
+                <Slider Name="ConvertPitch" Header="语调"
+                        Value="50"
+                        HorizontalAlignment="Stretch" Margin="0,5,0,0" />
+
+                <Slider Name="ConvertRate" Header="语速"
+                        Minimum="0.5" Value="17"
+                        HorizontalAlignment="Stretch" />
+
+                <Slider Name="ConvertVolume" Header="音量"
+                        Value="100"
+                        HorizontalAlignment="Stretch" />
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button Name="Play"
+                            Grid.Column="0" Margin="0 0 5 0"
+                            HorizontalAlignment="Stretch"
+                            Click="Play_Click">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="20" Text="&#xE102;" VerticalAlignment="Center" />
+                                <TextBlock Text="播放" FontSize="16" Margin="5,0,0,0" />
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                    <Button Name="Save"
+                            Grid.Column="1" Margin="5 0 0 0"
+                            HorizontalAlignment="Stretch"
+                            Click="Save_Click">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="20" Text="&#xE105;" VerticalAlignment="Center" />
+                                <TextBlock Text="保存" FontSize="16" Margin="5,0,0,0" />
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                </Grid>
+            </StackPanel>
+
+            <MediaElement x:Name="Media" AutoPlay="False" />
+        </Grid>
+    </ScrollViewer>
+</Page>
+
+<!--<VisualStateManager.VisualStateGroups>
+    <VisualStateGroup>
+        <VisualState>
+            <VisualState.StateTriggers>
+                <AdaptiveTrigger MinWindowWidth="{StaticResource LargeWindowSnapPoint}" />
+            </VisualState.StateTriggers>
+            <VisualState.Setters>
+                <Setter Target="ConvertText.(Grid.Column)" Value="0"/>
+                <Setter Target="ConvertText.(Grid.Row)" Value="0"/>
+                <Setter Target="ConvertText.(Grid.RowSpan)" Value="2"/>
+                <Setter Target="ConvertText.(Grid.ColumnSpan)" Value="1"/>
+                <Setter Target="ConvertFuncPanel.(Grid.Row)" Value="1"/>
+                <Setter Target="ConvertFuncPanel.(Grid.Column)" Value="1"/>
+                <Setter Target="ConvertFuncPanel.(Grid.RowSpan)" Value="2"/>
+                <Setter Target="ConvertFuncPanel.(Grid.ColumnSpan)" Value="1"/>
+            </VisualState.Setters>
+        </VisualState>
+        <VisualState>
+            <VisualState.StateTriggers>
+                <AdaptiveTrigger MinWindowWidth="{StaticResource MediumWindowSnapPoint}" />
+            </VisualState.StateTriggers>
+            <VisualState.Setters>
+                <Setter Target="ConvertText.(Grid.Column)" Value="0"/>
+                <Setter Target="ConvertText.(Grid.Row)" Value="0"/>
+                <Setter Target="ConvertText.(Grid.RowSpan)" Value="2"/>
+                <Setter Target="ConvertText.(Grid.ColumnSpan)" Value="1"/>
+                <Setter Target="ConvertFuncPanel.(Grid.Row)" Value="1"/>
+                <Setter Target="ConvertFuncPanel.(Grid.Column)" Value="1"/>
+                <Setter Target="ConvertFuncPanel.(Grid.RowSpan)" Value="2"/>
+                <Setter Target="ConvertFuncPanel.(Grid.ColumnSpan)" Value="1"/>
+            </VisualState.Setters>
+        </VisualState>
+        <VisualState>
+            <VisualState.StateTriggers>
+                <AdaptiveTrigger MinWindowWidth="{StaticResource MinWindowSnapPoint}" />
+            </VisualState.StateTriggers>
+            <VisualState.Setters>
+                <Setter Target="ConvertText.(Grid.Column)" Value="0"/>
+                <Setter Target="ConvertText.(Grid.Row)" Value="0"/>
+                <Setter Target="ConvertText.(Grid.RowSpan)" Value="1"/>
+                <Setter Target="ConvertText.(Grid.ColumnSpan)" Value="2"/>
+                <Setter Target="ConvertFuncPanel.(Grid.Row)" Value="1"/>
+                <Setter Target="ConvertFuncPanel.(Grid.Column)" Value="0"/>
+                <Setter Target="ConvertFuncPanel.(Grid.RowSpan)" Value="1"/>
+                <Setter Target="ConvertFuncPanel.(Grid.ColumnSpan)" Value="2"/>
+            </VisualState.Setters>
+        </VisualState>
+    </VisualStateGroup>
+</VisualStateManager.VisualStateGroups>-->
