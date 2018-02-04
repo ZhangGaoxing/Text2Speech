@@ -68,6 +68,8 @@ namespace Text2Speech.Views
                 Grid.SetColumn(ConvertFuncPanel, 0);
                 Grid.SetRowSpan(ConvertFuncPanel, 1);
                 Grid.SetColumnSpan(ConvertFuncPanel, 2);
+
+                ConvertText.MaxHeight = (Window.Current.Bounds.Height - 110) / 2.0;
             }
             else
             {
@@ -80,6 +82,8 @@ namespace Text2Speech.Views
                 Grid.SetColumn(ConvertFuncPanel, 1);
                 Grid.SetRowSpan(ConvertFuncPanel, 2);
                 Grid.SetColumnSpan(ConvertFuncPanel, 1);
+
+                ConvertText.MaxHeight = Window.Current.Bounds.Height - 110;
             }
         }
 
