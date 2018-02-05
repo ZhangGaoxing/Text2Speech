@@ -40,6 +40,11 @@
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE170;" />
                     </AppBarButton.Icon>
                 </AppBarButton>
+                <AppBarButton Name="EnableCortana" x:Uid="EnableCortana" Label="启用小娜" Click="EnableCortana_Click">
+                    <AppBarButton.Icon>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xED53;" />
+                    </AppBarButton.Icon>
+                </AppBarButton>
             </CommandBar.SecondaryCommands>
         </CommandBar>
     </Grid>

@@ -130,5 +130,32 @@ namespace Text2Speech
             titleBar.ButtonForegroundColor = Colors.White;
             titleBar.ButtonHoverBackgroundColor = Colors.Gray;
         }
+
+        private async void EnableCortana_Click(object sender, RoutedEventArgs e)
+        {
+            await MainGrid.Blur(10, 100, 0).StartAsync();
+
+            var contentDialog = new ContentDialog()
+            {
+                Content = new EnableCortana(),
+                PrimaryButtonText = "确定",
+                FullSizeDesired = true
+            };
+
+            contentDialog.Style = transparent;
+
+            contentDialog.Closing += async (_s, _e) =>
+            {
+                await MainGrid.Blur(0, 0, 0).StartAsync();
+            };
+
+            contentDialog.PrimaryButtonClick += async (_s, _e) =>
+            {
+                await MainGrid.Blur(0, 0, 0).StartAsync();
+                contentDialog.Hide();
+            };
+
+            await contentDialog.ShowAsync();
+        }
     }
 }

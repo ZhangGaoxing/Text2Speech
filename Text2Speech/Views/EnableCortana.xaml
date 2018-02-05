@@ -1,0 +1,71 @@
+﻿<Page
+    x:Class="Text2Speech.Views.EnableCortana"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Text2Speech.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ScrollViewer>
+        <StackPanel Margin="10">
+            <TextBlock TextWrapping="Wrap">
+               想要将 Cortana 作为语音合成引擎？ UWP 被赋予的权限并不能完成此项操作，因此需要手工启用。<LineBreak/>
+            </TextBlock>
+            <TextBox IsReadOnly="True" Height="300" AcceptsReturn="True" TextWrapping="Wrap">
+                <TextBox.Header>
+                    <TextBlock Text="1. 将下列代码复制保存为.ps1文件，使用PowerShell（管理员）运行" FontWeight="Bold" TextWrapping="Wrap" />
+                </TextBox.Header>
+                <TextBox.Text>
+                    $TTS1 = "HKLM:\SOFTWARE\Microsoft\Speech_OneCore\Voices\Tokens\MSTTS_V110_zhCN_HongyuM"&#x0a;
+                    $TTS1ATTRIB = "HKLM:\SOFTWARE\Microsoft\Speech_OneCore\Voices\Tokens\MSTTS_V110_zhCN_HongyuM\Attributes"
+                    $TTS2 = "HKLM:\SOFTWARE\Microsoft\Speech\Voices\Tokens\MSTTS_V110_zhCN_HongyuM"
+                    $TTS2ATTRIB = "HKLM:\SOFTWARE\Microsoft\Speech\Voices\Tokens\MSTTS_V110_zhCN_HongyuM\Attributes"
+                    New-Item -Path $TTS1,$TTS2,$TTS1ATTRIB,$TTS2ATTRIB
+                    New-ItemProperty -Path $TTS1,$TTS2 -Name "(default)" -PropertyType string -Value "Microsoft Hongyu Mobile - Chinese (Simplified, PRC)"
+                    New-ItemProperty -Path $TTS1,$TTS2 -Name LangDataPath -PropertyType string -Value "%windir%\\Speech_OneCore\\Engines\\TTS\\zh-CN\\MSTTSLoczhCN.dat"
+                    New-ItemProperty -Path $TTS1,$TTS2 -Name LangUpdateDataDirectory -PropertyType string -Value "%SystemDrive%\\Data\\SharedData\\Speech_OneCore\\Engines\\TTS\\zh-CN"
+                    New-ItemProperty -Path $TTS1,$TTS2 -Name VoicePath -PropertyType string -Value "%windir%\\Speech_OneCore\\Engines\\TTS\\zh-CN\\M2052Hongyu"
+                    New-ItemProperty -Path $TTS1,$TTS2 -Name VoiceUpdateDataDirectory -PropertyType string -Value "%SystemDrive%\\Data\\SharedData\\Speech_OneCore\\Engines\\TTS\\zh-CN"
+                    New-ItemProperty -Path $TTS1,$TTS2 -Name 804 -PropertyType string -Value "Microsoft Hongyu Mobile - Chinese (Simplified, PRC)"
+                    New-ItemProperty -Path $TTS1,$TTS2 -Name CLSID -PropertyType string -Value "{179F3D56-1B0B-42B2-A962-59B7EF59FE1B}"
+                    New-ItemProperty -Path $TTS1ATTRIB,$TTS2ATTRIB -Name Version -PropertyType string -Value "11.0"
+                    New-ItemProperty -Path $TTS1ATTRIB,$TTS2ATTRIB -Name Language -PropertyType string -Value "804"
+                    New-ItemProperty -Path $TTS1ATTRIB,$TTS2ATTRIB -Name Gender -PropertyType string -Value "Female"
+                    New-ItemProperty -Path $TTS1ATTRIB,$TTS2ATTRIB -Name Age -PropertyType string -Value "Adult"
+                    New-ItemProperty -Path $TTS1ATTRIB,$TTS2ATTRIB -Name DataVersion -PropertyType string -Value "11.0.2013.1022"
+                    New-ItemProperty -Path $TTS1ATTRIB,$TTS2ATTRIB -Name SharedPronunciation -PropertyType string -Value ""
+                    New-ItemProperty -Path $TTS1ATTRIB,$TTS2ATTRIB -Name Name -PropertyType string -Value "Microsoft Hongyu Mobile"
+                    New-ItemProperty -Path $TTS1ATTRIB,$TTS2ATTRIB -Name Vendor -PropertyType string -Value "Microsoft"
+                    New-ItemProperty -Path $TTS1ATTRIB,$TTS2ATTRIB -Name PersonalAssistant -PropertyType string -Value "1"
+                </TextBox.Text>
+            </TextBox>
+            <TextBox IsReadOnly="True" Height="300" AcceptsReturn="True" TextWrapping="Wrap">
+                <TextBox.Header>
+                    <TextBlock Text="2. 在 C:\Windows\SysWOW64\Speech_OneCore\common\zh-CN\tokens_TTS_zh-CN.xml 中的“Tokens”节点内添加如下内容（需要获取该文件的所有权并且获得修改、写入权限）" TextWrapping="Wrap" FontWeight="Bold" />
+                </TextBox.Header>
+                <TextBox.Text>
+                    &lt;Category name="Voices" categoryBase="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech_OneCore"&gt;
+                        &lt;Token name="MSTTS_V110_zhCN_HongyuM"&gt;
+                            &lt;String name="" value="Microsoft Hongyu Mobile - Chinese (Simplified, PRC)" /&gt;
+                            &lt;String name="LangDataPath" value="%windir%\Speech_OneCore\Engines\TTS\zh-CN\MSTTSLoczhCN.dat" /&gt;
+                            &lt;String name="VoicePath" value="%windir%\Speech_OneCore\Engines\TTS\zh-CN\M2052Hongyu" /&gt;
+                            &lt;String name="804" value="Microsoft Hongyu Mobile - Chinese (Simplified, PRC)" /&gt;
+                            &lt;String name="CLSID" value="{179F3D56-1B0B-42B2-A962-59B7EF59FE1B}" /&gt;
+                            &lt;Attribute name="Version" value="11.0" /&gt;
+                            &lt;Attribute name="Language" value="804" /&gt;
+                            &lt;Attribute name="Gender" value="Female" /&gt;
+                            &lt;Attribute name="Age" value="Adult" /&gt;
+                            &lt;Attribute name="DataVersion" value="11.0.2013.1022" /&gt;
+                            &lt;Attribute name="SharedPronunciation" value="" /&gt;
+                            &lt;Attribute name="Name" value="Microsoft Hongyu Mobile" /&gt;
+                            &lt;Attribute name="Vendor" value="Microsoft" /&gt;
+                            &lt;Attribute name="SampleText" value="您已选择 %1 作为默认语音" /&gt;
+                        &lt;/Token&gt;
+                    &lt;/Category&gt;
+                </TextBox.Text>
+            </TextBox>
+            <TextBlock Text="3. 重启应用，选择 Microsoft Hongyu Mobile 即可" FontWeight="Bold" TextWrapping="Wrap" />
+        </StackPanel>
+    </ScrollViewer>
+</Page>
