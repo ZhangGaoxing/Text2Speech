@@ -22,6 +22,7 @@ using Windows.ApplicationModel.Core;
 using Windows.Media.Core;
 using Windows.Media.Playback;
 using Windows.UI.Core;
+using System.Text;
 
 // https://go.microsoft.com/fwlink/?LinkId=234238 上介绍了“空白页”项模板
 
@@ -287,5 +288,22 @@ namespace Text2Speech.Views
             }
         }
         #endregion
+
+        private async void Open_Click(object sender, RoutedEventArgs e)
+        {
+            var openFile = new FileOpenPicker();
+            openFile.SuggestedStartLocation = PickerLocationId.DocumentsLibrary;
+            openFile.FileTypeFilter.Add(".txt");
+            var file = await openFile.PickSingleFileAsync();
+
+            if (file != null)
+            {
+                var stream = await file.OpenStreamForReadAsync();
+                byte[] buffer = new byte[stream.Length];
+                await stream.ReadAsync(buffer, 0, buffer.Length);
+
+                ConvertText.Text = Encoding.UTF8.GetString(buffer);
+            }
+        }
     }
 }

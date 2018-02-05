@@ -24,10 +24,20 @@
                           IsActive="False"
                           Height="80" Width="80" Foreground="{ThemeResource SystemControlBackgroundAccentBrush}" />
 
-            <TextBox Name="ConvertText" Header="转换文本：" Margin="5"
+            <TextBox Name="ConvertText" Margin="5"
                      Grid.Column="0" Grid.RowSpan="2"
-                     TextWrapping="Wrap" AcceptsReturn="True"
-                     HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                     TextWrapping="Wrap"  AcceptsReturn="True"
+                     HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <TextBox.Header>
+                    <Grid>
+                        <TextBlock Text="转换文本：" />
+                        <Button Name="Open"
+                                FontFamily="Segoe MDL2 Assets" Content="&#xE160;"
+                                HorizontalAlignment="Right"
+                                Click="Open_Click"/>
+                    </Grid>
+                </TextBox.Header>
+            </TextBox>
 
             <StackPanel Name="ConvertFuncPanel" Margin="5"
                         Grid.Column="1" Grid.RowSpan="2"
