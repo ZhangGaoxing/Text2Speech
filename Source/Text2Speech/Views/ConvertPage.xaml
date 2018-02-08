@@ -47,19 +47,22 @@
                           HorizontalAlignment="Stretch"
                           SelectionChanged="ConvertVoice_SelectionChanged"/>
 
-                    <Slider Name="ConvertPitch" Header="语调"
-                        Value="50"
-                        HorizontalAlignment="Stretch" Margin="0,5,0,0" />
+                    <StackPanel Name="ConvertFuncNoSupport"
+                                Margin="0,5,0,0">
+                        <Slider Name="ConvertPitch" Header="语调"
+                                Value="50"
+                                HorizontalAlignment="Stretch" />
 
-                    <Slider Name="ConvertRate" Header="语速"
-                        Minimum="0.5" Value="17"
-                        HorizontalAlignment="Stretch" />
+                        <Slider Name="ConvertRate" Header="语速"
+                                Minimum="0.5" Value="17"
+                                HorizontalAlignment="Stretch" />
 
-                    <Slider Name="ConvertVolume" Header="音量"
-                        Value="100"
-                        HorizontalAlignment="Stretch" />
+                        <Slider Name="ConvertVolume" Header="音量"
+                                Value="100"
+                                HorizontalAlignment="Stretch" />
+                    </StackPanel>
 
-                    <Grid>
+                    <Grid Margin="0,10,0,10">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />

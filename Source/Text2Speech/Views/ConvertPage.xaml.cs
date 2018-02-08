@@ -50,7 +50,7 @@ namespace Text2Speech.Views
 
             if (DeviceInfoManager.GetOsVersion() < 16299)
             {
-                ConvertFuncPanel.Visibility = Visibility.Collapsed;
+                ConvertFuncNoSupport.Visibility = Visibility.Collapsed;
             }
         }
 
