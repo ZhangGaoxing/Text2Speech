@@ -170,7 +170,7 @@
     <value>1. 将下列代码复制保存为.ps1文件，使用PowerShell（管理员）运行</value>
   </data>
   <data name="EnableStep2.Text" xml:space="preserve">
-    <value>2. 在 C:\Windows\SysWOW64\Speech_OneCore\common\zh-CN\tokens_TTS_zh-CN.xml 中的&amp;quot;Tokens&amp;quot;节点内添加如下内容（需要获取该文件的所有权并且获得修改、写入权限）</value>
+    <value>2. 在 C:\Windows\SysWOW64\Speech_OneCore\common\zh-CN\tokens_TTS_zh-CN.xml 中的 Tokens 节点内添加如下内容（需要获取该文件的所有权并且获得修改、写入权限）</value>
   </data>
   <data name="EnableStep3.Text" xml:space="preserve">
     <value>3. 重启应用，选择 Microsoft Hongyu Mobile 即可</value>
