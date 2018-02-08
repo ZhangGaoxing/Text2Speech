@@ -18,8 +18,8 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <ProgressRing Name="ConvertProgress"
-                          Grid.ColumnSpan="3" Grid.RowSpan="3"
+            <ProgressRing Name="ConvertProgress" 
+                          Grid.ColumnSpan="3" Grid.RowSpan="3" Canvas.ZIndex="100"
                           VerticalAlignment="Center" HorizontalAlignment="Center"
                           IsActive="False"
                           Height="80" Width="80" Foreground="{ThemeResource SystemControlBackgroundAccentBrush}" />
