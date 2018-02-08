@@ -124,6 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\avatar.png" />
+    <Content Include="Assets\github.png" />
     <Content Include="Assets\igithub.png" />
     <Content Include="Assets\iweibo.png" />
     <Content Include="Assets\LargeTile.scale-100.png" />

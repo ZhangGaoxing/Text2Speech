@@ -31,18 +31,31 @@
 
             <Grid Grid.Row="1">
                 <StackPanel>
-                    <TextBlock x:Uid="Feedback" Text="发送反馈" FontSize="22" Margin="20,20,0,0" />
-                    <StackPanel Orientation="Horizontal" Margin="20,5,0,0">
-                        <TextBlock x:Uid="EMail" VerticalAlignment="Center">发送邮件至：</TextBlock>
-                        <HyperlinkButton NavigateUri="mailto:zhangyuexin121@live.cn" Content="zhangyuexin121@live.cn" />
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="20,5,0,0">
-                        <TextBlock x:Uid="Sina" VerticalAlignment="Center">新浪微博私信：</TextBlock>
-                        <HyperlinkButton NavigateUri="http://www.weibo.com/279639933">
-                            <Image Source="/Assets/weibo.png" Height="35" />
-                        </HyperlinkButton>
+                    <StackPanel>
+                        <TextBlock x:Uid="Feedback" Text="发送反馈" FontSize="22" Margin="20,20,0,0" />
+                        <StackPanel Orientation="Horizontal" Margin="20,5,0,0">
+                            <TextBlock x:Uid="EMail" VerticalAlignment="Center">发送邮件至：</TextBlock>
+                            <HyperlinkButton NavigateUri="mailto:zhangyuexin121@live.cn" Content="zhangyuexin121@live.cn" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="20,5,0,0">
+                            <TextBlock x:Uid="Sina" VerticalAlignment="Center">新浪微博私信：</TextBlock>
+                            <HyperlinkButton NavigateUri="http://www.weibo.com/279639933">
+                                <Image Source="/Assets/weibo.png" Height="35" />
+                            </HyperlinkButton>
+                        </StackPanel>
                     </StackPanel>
 
+                    <StackPanel>
+                        <TextBlock Text="其他" FontSize="22" Margin="20,20,0,0" />
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontSize="14" Margin="20,5,0,0" VerticalAlignment="Center">
+                                本应用使用 MIT 许可开源：
+                            </TextBlock>
+                            <HyperlinkButton NavigateUri="https://github.com/ZhangGaoxing/Text2Speech">
+                                <Image Source="/Assets/github.png" Height="40" />
+                            </HyperlinkButton>
+                        </StackPanel>
+                    </StackPanel>
                 </StackPanel>
             </Grid>
         </Grid>
