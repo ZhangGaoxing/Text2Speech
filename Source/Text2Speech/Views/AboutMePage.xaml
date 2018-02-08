@@ -22,7 +22,7 @@
                         </Ellipse.Fill>
                     </Ellipse>
 
-                    <TextBlock Text="张高兴" FontSize="24" HorizontalAlignment="Center" Foreground="White" Margin="0,5,0,0" />
+                    <TextBlock x:Uid="AuthorName" Text="张高兴" FontSize="24" HorizontalAlignment="Center" Foreground="White" Margin="0,5,0,0" />
                     <TextBlock Text="A college student, love .NET and C#." TextWrapping="WrapWholeWords" HorizontalAlignment="Center" Foreground="White" Margin="0,5,0,0" />
                 </StackPanel>
 
@@ -90,12 +90,12 @@
 
                 <StackPanel Grid.Row="1" Margin="0,20,0,0">
                     <TextBlock Foreground="White" TextWrapping="Wrap" Margin="20,0,20,0">
-                    张高兴致力于打造无内购、无广告的干净应用，在 UWP 这个小圈子里做出自己微小的贡献。<LineBreak/><LineBreak/>
-                    如果您觉得本应用还不错的话，请捐助我。
+                        <Run x:Uid="Desc1" Text="张高兴致力于打造无内购、无广告的干净应用，在 UWP 这个小圈子里做出自己微小的贡献。" /><LineBreak/><LineBreak/>
+                        <Run x:Uid="Desc2" Text="如果您觉得本应用还不错的话，请捐助我。" />
                     </TextBlock>
 
                     <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
-                        <Button Content="支付宝" Foreground="White" Click="Button_Click">
+                        <Button x:Uid="Alipay" Content="支付宝" Foreground="White" Click="Button_Click">
                             <FlyoutBase.AttachedFlyout>
                                 <Flyout x:Name="Zhifubao">
                                     <StackPanel>
@@ -106,7 +106,7 @@
                             </FlyoutBase.AttachedFlyout>
                         </Button>
 
-                        <Button Content="微信" Foreground="White" Margin="10,0,0,0" Click="Button_Click">
+                        <Button x:Uid="Weixin" Content="微信" Foreground="White" Margin="10,0,0,0" Click="Button_Click">
                             <FlyoutBase.AttachedFlyout>
                                 <Flyout x:Name="Weixin">
                                     <StackPanel>

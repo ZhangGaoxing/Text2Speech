@@ -16,10 +16,10 @@
         </Grid.RowDefinitions>
 
         <Grid Name="BarGrid">
-            <TextBlock x:Uid="AppNameText" FontSize="12" VerticalAlignment="Center" Text="语音合成器" Margin="15,5,0,5" />
+            <TextBlock x:Uid="AppName" FontSize="12" VerticalAlignment="Center" Text="语音合成器" Margin="15,5,0,5" />
         </Grid>
         
-        <TextBlock x:Uid="AppNameText" FontSize="35" Margin="15,15,15,10" Text="语音合成器" />
+        <TextBlock x:Uid="AppName" FontSize="35" Margin="15,15,15,10" Text="语音合成器" />
         
         <Frame Grid.Row="2" Name="RootFrame" />
         

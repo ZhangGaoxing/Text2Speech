@@ -30,7 +30,7 @@
                      HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <TextBox.Header>
                     <Grid>
-                        <TextBlock Text="转换文本：" />
+                        <TextBlock x:Uid="ConvertText" Text="转换文本：" />
                         <Button Name="Open"
                                 FontFamily="Segoe MDL2 Assets" Content="&#xE160;"
                                 HorizontalAlignment="Right"
@@ -43,21 +43,21 @@
                         Grid.Column="1" Grid.RowSpan="2">
 
                 <StackPanel Name="ConvertFuncPanelInner">
-                    <ComboBox Name="ConvertVoice" Header="语音："
+                    <ComboBox Name="ConvertVoice" x:Uid="ConvertVoice" Header="语音："
                           HorizontalAlignment="Stretch"
                           SelectionChanged="ConvertVoice_SelectionChanged"/>
 
                     <StackPanel Name="ConvertFuncNoSupport"
                                 Margin="0,5,0,0">
-                        <Slider Name="ConvertPitch" Header="语调"
+                        <Slider Name="ConvertPitch" x:Uid="ConvertPitch" Header="语调"
                                 Value="50"
                                 HorizontalAlignment="Stretch" />
 
-                        <Slider Name="ConvertRate" Header="语速"
+                        <Slider Name="ConvertRate" x:Uid="ConvertRate" Header="语速"
                                 Minimum="0.5" Value="17"
                                 HorizontalAlignment="Stretch" />
 
-                        <Slider Name="ConvertVolume" Header="音量"
+                        <Slider Name="ConvertVolume" x:Uid="ConvertVolume" Header="音量"
                                 Value="100"
                                 HorizontalAlignment="Stretch" />
                     </StackPanel>
@@ -75,7 +75,7 @@
                             <Button.Content>
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="20" Text="&#xE102;" VerticalAlignment="Center" />
-                                    <TextBlock Text="播放" FontSize="16" Margin="5,0,0,0" />
+                                    <TextBlock x:Uid="Play" Text="播放" FontSize="16" Margin="5,0,0,0" />
                                 </StackPanel>
                             </Button.Content>
                         </Button>
@@ -86,7 +86,7 @@
                             <Button.Content>
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="20" Text="&#xE105;" VerticalAlignment="Center" />
-                                    <TextBlock Text="保存" FontSize="16" Margin="5,0,0,0" />
+                                    <TextBlock x:Uid="Save" Text="保存" FontSize="16" Margin="5,0,0,0" />
                                 </StackPanel>
                             </Button.Content>
                         </Button>

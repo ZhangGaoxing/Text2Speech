@@ -10,7 +10,7 @@
     <ScrollViewer>
         <StackPanel Margin="10">
             <TextBlock TextWrapping="Wrap">
-               想要将 Cortana 作为语音合成引擎？ UWP 被赋予的权限并不能完成此项操作，因此需要手工启用。<LineBreak/>
+               <Run x:Uid="EnableDesc" Text="想要将 Cortana 作为语音合成引擎？ UWP 被赋予的权限并不能完成此项操作，因此需要手工启用。" /><LineBreak/>
             </TextBlock>
             <TextBox IsReadOnly="True" Height="300" AcceptsReturn="True" TextWrapping="Wrap" Text="
 $TTS1 = &quot;HKLM:\SOFTWARE\Microsoft\Speech_OneCore\Voices\Tokens\MSTTS_V110_zhCN_HongyuM&quot;&#x0a;
@@ -35,7 +35,7 @@ New-ItemProperty -Path $TTS1ATTRIB,$TTS2ATTRIB -Name Name -PropertyType string -
 New-ItemProperty -Path $TTS1ATTRIB,$TTS2ATTRIB -Name Vendor -PropertyType string -Value &quot;Microsoft&quot;&#x0a;
 New-ItemProperty -Path $TTS1ATTRIB,$TTS2ATTRIB -Name PersonalAssistant -PropertyType string -Value &quot;1&quot;">
                 <TextBox.Header>
-                    <TextBlock Text="1. 将下列代码复制保存为.ps1文件，使用PowerShell（管理员）运行" FontWeight="Bold" TextWrapping="Wrap" />
+                    <TextBlock x:Uid="EnableStep1" Text="1. 将下列代码复制保存为.ps1文件，使用PowerShell（管理员）运行" FontWeight="Bold" TextWrapping="Wrap" />
                 </TextBox.Header>
             </TextBox>
             <TextBox IsReadOnly="True" Height="300" AcceptsReturn="True" TextWrapping="Wrap" Text="
@@ -58,10 +58,10 @@ New-ItemProperty -Path $TTS1ATTRIB,$TTS2ATTRIB -Name PersonalAssistant -Property
     &lt;/Token&gt;&#x0a;
 &lt;/Category&gt;">
                 <TextBox.Header>
-                    <TextBlock Text="2. 在 C:\Windows\SysWOW64\Speech_OneCore\common\zh-CN\tokens_TTS_zh-CN.xml 中的&quot;Tokens&quot;节点内添加如下内容（需要获取该文件的所有权并且获得修改、写入权限）" TextWrapping="Wrap" FontWeight="Bold" />
+                    <TextBlock x:Uid="EnableStep2" Text="2. 在 C:\Windows\SysWOW64\Speech_OneCore\common\zh-CN\tokens_TTS_zh-CN.xml 中的&quot;Tokens&quot;节点内添加如下内容（需要获取该文件的所有权并且获得修改、写入权限）" TextWrapping="Wrap" FontWeight="Bold" />
                 </TextBox.Header>
             </TextBox>
-            <TextBlock Text="3. 重启应用，选择 Microsoft Hongyu Mobile 即可" FontWeight="Bold" TextWrapping="Wrap" />
+            <TextBlock x:Uid="EnableStep3" Text="3. 重启应用，选择 Microsoft Hongyu Mobile 即可" FontWeight="Bold" TextWrapping="Wrap" />
         </StackPanel>
     </ScrollViewer>
 </Page>

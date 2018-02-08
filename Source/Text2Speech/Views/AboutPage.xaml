@@ -23,7 +23,7 @@
                         </Ellipse.Fill>
                     </Ellipse>
 
-                    <TextBlock x:Uid="AppNameText" Text="语音合成器" Foreground="White" FontSize="30" Margin="0,10,0,0" HorizontalAlignment="Center" />
+                    <TextBlock x:Uid="AppName" Text="语音合成器" Foreground="White" FontSize="30" Margin="0,10,0,0" HorizontalAlignment="Center" />
                     <TextBlock Name="Version" HorizontalAlignment="Center" Margin="0,5,0,0" />
                     <TextBlock Name="Publisher" HorizontalAlignment="Center" Margin="0,5,0,15" />
                 </StackPanel>
@@ -46,9 +46,9 @@
                     </StackPanel>
 
                     <StackPanel>
-                        <TextBlock Text="其他" FontSize="22" Margin="20,20,0,0" />
+                        <TextBlock x:Uid="Others" Text="其他" FontSize="22" Margin="20,20,0,0" />
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock FontSize="14" Margin="20,5,0,0" VerticalAlignment="Center">
+                            <TextBlock x:Uid="License" FontSize="14" Margin="20,5,0,0" VerticalAlignment="Center">
                                 本应用使用 MIT 许可开源：
                             </TextBlock>
                             <HyperlinkButton NavigateUri="https://github.com/ZhangGaoxing/Text2Speech">
