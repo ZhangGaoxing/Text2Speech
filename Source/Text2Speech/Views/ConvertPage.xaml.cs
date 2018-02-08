@@ -70,7 +70,7 @@ namespace Text2Speech.Views
                 Grid.SetRowSpan(ConvertFuncPanel, 1);
                 Grid.SetColumnSpan(ConvertFuncPanel, 2);
 
-                ConvertText.MaxHeight = (Window.Current.Bounds.Height - 110) / 2.0;
+                ConvertText.MaxHeight = Math.Abs(Window.Current.Bounds.Height - 110 - ConvertFuncPanelInner.ActualHeight);
             }
             else
             {

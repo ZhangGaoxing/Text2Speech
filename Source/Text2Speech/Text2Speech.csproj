@@ -18,7 +18,7 @@
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
     <PackageCertificateKeyFile>Text2Speech_StoreKey.pfx</PackageCertificateKeyFile>
-    <PackageCertificateThumbprint>040511CD1DBDF8DE472C2960B0E3DC349E5398D2</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>F5072BD0C6EA308C47D6E4C133F94B6AC45440AC</PackageCertificateThumbprint>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <AppxBundle>Always</AppxBundle>
     <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>

@@ -11,7 +11,7 @@
         <Grid Margin="10" SizeChanged="Grid_SizeChanged">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -19,7 +19,7 @@
             </Grid.ColumnDefinitions>
 
             <ProgressRing Name="ConvertProgress"
-                          Grid.ColumnSpan="2" Grid.RowSpan="2"
+                          Grid.ColumnSpan="3" Grid.RowSpan="3"
                           VerticalAlignment="Center" HorizontalAlignment="Center"
                           IsActive="False"
                           Height="80" Width="80" Foreground="{ThemeResource SystemControlBackgroundAccentBrush}" />
@@ -40,54 +40,55 @@
             </TextBox>
 
             <StackPanel Name="ConvertFuncPanel" Margin="5"
-                        Grid.Column="1" Grid.RowSpan="2"
-                        HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        Grid.Column="1" Grid.RowSpan="2">
 
-                <ComboBox Name="ConvertVoice" Header="语音："
+                <StackPanel Name="ConvertFuncPanelInner">
+                    <ComboBox Name="ConvertVoice" Header="语音："
                           HorizontalAlignment="Stretch"
                           SelectionChanged="ConvertVoice_SelectionChanged"/>
 
-                <Slider Name="ConvertPitch" Header="语调"
+                    <Slider Name="ConvertPitch" Header="语调"
                         Value="50"
                         HorizontalAlignment="Stretch" Margin="0,5,0,0" />
 
-                <Slider Name="ConvertRate" Header="语速"
+                    <Slider Name="ConvertRate" Header="语速"
                         Minimum="0.5" Value="17"
                         HorizontalAlignment="Stretch" />
 
-                <Slider Name="ConvertVolume" Header="音量"
+                    <Slider Name="ConvertVolume" Header="音量"
                         Value="100"
                         HorizontalAlignment="Stretch" />
 
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
 
-                    <Button Name="Play"
+                        <Button Name="Play"
                             Grid.Column="0" Margin="0 0 5 0"
                             HorizontalAlignment="Stretch"
                             Click="Play_Click">
-                        <Button.Content>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="20" Text="&#xE102;" VerticalAlignment="Center" />
-                                <TextBlock Text="播放" FontSize="16" Margin="5,0,0,0" />
-                            </StackPanel>
-                        </Button.Content>
-                    </Button>
-                    <Button Name="Save"
+                            <Button.Content>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="20" Text="&#xE102;" VerticalAlignment="Center" />
+                                    <TextBlock Text="播放" FontSize="16" Margin="5,0,0,0" />
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+                        <Button Name="Save"
                             Grid.Column="1" Margin="5 0 0 0"
                             HorizontalAlignment="Stretch"
                             Click="Save_Click">
-                        <Button.Content>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="20" Text="&#xE105;" VerticalAlignment="Center" />
-                                <TextBlock Text="保存" FontSize="16" Margin="5,0,0,0" />
-                            </StackPanel>
-                        </Button.Content>
-                    </Button>
-                </Grid>
+                            <Button.Content>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="20" Text="&#xE105;" VerticalAlignment="Center" />
+                                    <TextBlock Text="保存" FontSize="16" Margin="5,0,0,0" />
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+                    </Grid>
+                </StackPanel>
             </StackPanel>
 
             <MediaElement x:Name="Media" AutoPlay="False" />
