@@ -178,6 +178,12 @@
   <data name="Feedback.Text" xml:space="preserve">
     <value>Feedback</value>
   </data>
+  <data name="FileInput.Text" xml:space="preserve">
+    <value>Please drop the file here.</value>
+  </data>
+  <data name="FileInputText" xml:space="preserve">
+    <value>Please drop the file here.</value>
+  </data>
   <data name="License.Text" xml:space="preserve">
     <value>This application is licensed under the MIT License ：</value>
   </data>

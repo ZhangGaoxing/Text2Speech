@@ -178,6 +178,12 @@
   <data name="Feedback.Text" xml:space="preserve">
     <value>发送反馈</value>
   </data>
+  <data name="FileInput.Text" xml:space="preserve">
+    <value>请将文件拖放于此。</value>
+  </data>
+  <data name="FileInputText" xml:space="preserve">
+    <value>请将文件拖放于此。</value>
+  </data>
   <data name="License.Text" xml:space="preserve">
     <value>本应用使用 MIT 许可开源：</value>
   </data>

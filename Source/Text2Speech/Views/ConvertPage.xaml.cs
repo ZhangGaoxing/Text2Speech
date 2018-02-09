@@ -23,6 +23,9 @@ using Windows.Media.Core;
 using Windows.Media.Playback;
 using Windows.UI.Core;
 using System.Text;
+using Microsoft.Toolkit.Uwp.UI.Animations;
+using Windows.ApplicationModel.DataTransfer;
+using Windows.ApplicationModel.Resources;
 
 // https://go.microsoft.com/fwlink/?LinkId=234238 上介绍了“空白页”项模板
 
@@ -304,6 +307,59 @@ namespace Text2Speech.Views
 
                 ConvertText.Text = Encoding.UTF8.GetString(buffer);
             }
+        }
+
+        private async void Grid_DragEnter(object sender, DragEventArgs e)
+        {
+            await ConvertMainGrid.Blur(value: 7, duration: 0, delay: 0).StartAsync();
+
+            FileDropGrid.Visibility = Visibility.Visible;
+        }
+
+        private void Grid_DragOver(object sender, DragEventArgs e)
+        {
+            e.AcceptedOperation = Windows.ApplicationModel.DataTransfer.DataPackageOperation.Copy;
+
+            ResourceLoader resourceLoader = ResourceLoader.GetForCurrentView();
+            string fileInput = resourceLoader.GetString("FileInputText");
+
+            e.DragUIOverride.Caption = fileInput;
+        }
+
+        private async void Grid_Drop(object sender, DragEventArgs e)
+        {
+            FileDropGrid.Visibility = Visibility.Collapsed;
+
+            await ConvertMainGrid.Blur(value: 0, duration: 0, delay: 0).StartAsync();
+
+            if (e.DataView.Contains(StandardDataFormats.StorageItems))
+            {
+                var items = await e.DataView.GetStorageItemsAsync();
+
+                var selectedFiles = items.OfType<StorageFile>().ToList() as IReadOnlyList<StorageFile>;
+
+                var file = selectedFiles[0];
+
+                if (file != null)
+                {
+                    var stream = await file.OpenStreamForReadAsync();
+                    byte[] buffer = new byte[stream.Length];
+                    await stream.ReadAsync(buffer, 0, buffer.Length);
+
+                    ConvertText.Text = Encoding.UTF8.GetString(buffer);
+                }
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private async void Grid_DragLeave(object sender, DragEventArgs e)
+        {
+            FileDropGrid.Visibility = Visibility.Collapsed;
+
+            await ConvertMainGrid.Blur(value: 0, duration: 0, delay: 0).StartAsync();
         }
     }
 }

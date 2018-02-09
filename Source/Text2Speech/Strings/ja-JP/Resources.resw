@@ -178,6 +178,12 @@
   <data name="Feedback.Text" xml:space="preserve">
     <value>フィードバック</value>
   </data>
+  <data name="FileInput.Text" xml:space="preserve">
+    <value>書類をこれに入れてください。</value>
+  </data>
+  <data name="FileInputText" xml:space="preserve">
+    <value>書類をこれに入れてください。</value>
+  </data>
   <data name="License.Text" xml:space="preserve">
     <value>本アプリケーション使用 MIT 許可オープンソース：</value>
   </data>
