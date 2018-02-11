@@ -127,10 +127,10 @@
     <value>Alipay</value>
   </data>
   <data name="AppName.Text" xml:space="preserve">
-    <value>Text2Speech</value>
+    <value>Text2Speech (TTS)</value>
   </data>
   <data name="AppNameText" xml:space="preserve">
-    <value>Text2Speech</value>
+    <value>Text2Speech (TTS)</value>
     <comment>App Name</comment>
   </data>
   <data name="AuthorName.Text" xml:space="preserve">
