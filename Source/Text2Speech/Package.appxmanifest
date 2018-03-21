@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="61563.62728D9EA2F0A" Publisher="CN=A3FDB3F8-D9B5-4AC5-A767-89EF990FD8C9" Version="1.2.0.0" />
+  <Identity Name="61563.62728D9EA2F0A" Publisher="CN=A3FDB3F8-D9B5-4AC5-A767-89EF990FD8C9" Version="1.2.2.0" />
   <mp:PhoneIdentity PhoneProductId="982dcae1-1228-49ee-96af-458d34de97c3" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>语音合成器</DisplayName>
+    <DisplayName>ms-resource:AppNameText</DisplayName>
     <PublisherDisplayName>张高兴</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>

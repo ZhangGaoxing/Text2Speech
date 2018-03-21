@@ -61,7 +61,7 @@ New-ItemProperty -Path $TTS1ATTRIB,$TTS2ATTRIB -Name PersonalAssistant -Property
                     <TextBlock x:Uid="EnableStep2" Text="2. 在 C:\Windows\SysWOW64\Speech_OneCore\common\zh-CN\tokens_TTS_zh-CN.xml 中的&quot;Tokens&quot;节点内添加如下内容（需要获取该文件的所有权并且获得修改、写入权限）" TextWrapping="Wrap" FontWeight="Bold" />
                 </TextBox.Header>
             </TextBox>
-            <TextBlock x:Uid="EnableStep3" Text="3. 重启应用，选择 Microsoft Hongyu Mobile 即可" FontWeight="Bold" TextWrapping="Wrap" />
+            <TextBlock x:Uid="EnableStep3" Text="3. 重启应用，选择 Microsoft Hongyu Mobile 即可（若选择列表内无此项，尝试重新安装此应用）" FontWeight="Bold" TextWrapping="Wrap" />
         </StackPanel>
     </ScrollViewer>
 </Page>
